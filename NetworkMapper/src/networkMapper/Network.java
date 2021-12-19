@@ -47,6 +47,13 @@ public class Network {
 		subnetMask = calculateSubnetMask();
 		
 		// Display initial details
+		printDetails();
+	}
+	
+	/**
+	 * Prints the network's details;
+	 */
+	public void printDetails() {
 		System.out.println("**************************");
 		System.out.println("* Target Network Details *");
 		System.out.println("**************************");
@@ -56,6 +63,7 @@ public class Network {
 		System.out.println("**************************");
 	}
 	
+
 	/*
 	 * Generates a list of all possible host address for the subnet
 	 */
