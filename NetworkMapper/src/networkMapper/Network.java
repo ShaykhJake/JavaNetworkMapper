@@ -282,8 +282,8 @@ public class Network {
 	}
 	
 	/**
-	 * Calculates the subnet mask for the given network
-	 * @return integer
+	 * Calculates the subnet mask string for the given network
+	 * @return String
 	 */
     public String calculateSubnetMask() {
     	long mask = (((long) Math.pow(2, CIDR) - 1) << (32 - CIDR)) ;
