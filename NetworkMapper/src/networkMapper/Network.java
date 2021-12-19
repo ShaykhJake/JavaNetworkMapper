@@ -104,7 +104,7 @@ public class Network {
 			// Iterate over the threads, assigning methods to them, and starting them
 			for(int i=0; i < threads.length; i++) {
 				// Assign threadedPing method to the current thread for the given address
-				threads[i] = new Thread(new threadedPing(possibleHosts.get(i), this));
+				threads[i] = new Thread(new ThreadedPing(possibleHosts.get(i), this));
 				// Start the thread
 				threads[i].start();
 			}
@@ -128,7 +128,7 @@ public class Network {
 	 * A class extending Thread to handle pings
 	 * 
 	 */
-	public class threadedPing extends Thread {
+	public class ThreadedPing extends Thread {
 		/**
 		 * Host address
 		 */
@@ -142,7 +142,7 @@ public class Network {
 		 * @param address
 		 * @param network
 		 */
-		public threadedPing(String address, Network network) {
+		public ThreadedPing(String address, Network network) {
 			this.address = address;
 			this.network = network;
 		}
