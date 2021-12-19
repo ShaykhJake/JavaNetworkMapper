@@ -168,7 +168,13 @@ public class Network {
 			// Initialize inet object to given host address
 			inet = InetAddress.getByName(host.address);
 			// Ping using given timeout (ms)
+			
+			long startTime = System.nanoTime();
 			if (inet.isReachable(50)) {
+				long stopTime = System.nanoTime();
+				double durationNS = stopTime - startTime;
+				double durationMS = durationNS/1000000.0;
+				host.setPing(durationMS);
 				// if reachable, add the returned host name
 				host.name = inet.getHostName();
 				// return true

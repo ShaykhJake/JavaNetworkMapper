@@ -221,6 +221,8 @@ public class NetworkMapper {
 		for(Host host : target.activeHosts) {
 			results += " - " + host.address + ", " + host.name + ":";
 			results += newLine;
+			results += "   - (ping time " + host.getPingString() + ")";
+			results += newLine;
 			String ports;
 			// Generates a comma-separated string of the active ports
 			if(host.activePorts.size() > 0) {

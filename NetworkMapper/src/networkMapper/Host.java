@@ -2,6 +2,7 @@ package networkMapper;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 
@@ -14,7 +15,7 @@ public class Host {
 	/**
 	 * 
 	 */
-	int ping; // in ms
+	private double ping; // in ms
 	String name;
 	ArrayList<Integer> activePorts;
 	boolean isActive;
@@ -50,5 +51,20 @@ public class Host {
 			return false;
 		}
 
+	}
+	/**
+	 * Sets the ping time in ms
+	 * @param ping
+	 */
+	public void setPing(double ping) {
+		this.ping = ping;
+	}
+	/**
+	 * Gets the formatted string value of the ping time
+	 * @return formatted string
+	 */
+	public String getPingString() {
+		DecimalFormat df = new DecimalFormat("###.##");
+		return df.format(ping) + "ms";
 	}
 }
