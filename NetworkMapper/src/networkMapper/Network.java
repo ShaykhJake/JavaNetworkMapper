@@ -146,10 +146,8 @@ public class Network {
 			this.address = address;
 			this.network = network;
 		}
-		/**
-		 * Synchronized run method
-		 */
-		synchronized public void run() {
+		
+		public void run() {
 			try {
 				// Create a new Host object
 				Host host = new Host(address);
@@ -250,11 +248,8 @@ public class Network {
 			this.host = host;
 			this.port = port;
 		}
-		
-		/**
-		 * Run method
-		 */
-		synchronized public void run() {
+	
+		public void run() {
 			try {
 				// scans given port
 				if(host.scanPort(port)) {
