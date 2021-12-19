@@ -167,7 +167,7 @@ public class NetworkMapper {
 		// Get the current date
 		Date dateTime = new Date();
 		// Format the date
-		String dateTimeString = new SimpleDateFormat("yyyy.MM.dd_HH.mm.ss").format(dateTime);
+		String dateTimeString = new SimpleDateFormat("yyyy.MM.dd_HHmm").format(dateTime);
 		// Initialize a file name based on date and time
 		String fileName = "Scan_" + dateTimeString + ".txt";
 		// Initialized a new file object
