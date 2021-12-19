@@ -212,7 +212,7 @@ public class Network {
 				// Iterate over thread array
 				for(int i=0; i < threads.length; i++) {
 					// Create new thread for a threaded scan of the host's port
-					threads[i] = new Thread(new threadedScan(activeHosts.get(i), port));
+					threads[i] = new Thread(new ThreadedScan(activeHosts.get(i), port));
 					// Start the thread
 					threads[i].start();
 				}
@@ -232,7 +232,7 @@ public class Network {
 	 * scans the given port for the given host, extending Thread
 	 *
 	 */
-	public class threadedScan extends Thread {
+	public class ThreadedScan extends Thread {
 		/**
 		 * host object
 		 */
@@ -246,7 +246,7 @@ public class Network {
 		 * @param host
 		 * @param port
 		 */
-		public threadedScan(Host host, int port) {
+		public ThreadedScan(Host host, int port) {
 			this.host = host;
 			this.port = port;
 		}
