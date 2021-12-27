@@ -155,9 +155,10 @@ public class Network {
 				if(pingHost(host)) {
 					// Add to the active hosts lists if active
 					network.activeHosts.add(host);
+					return;
 				} 
 			} catch (Exception e) {
-				e.printStackTrace(System.out);
+				return;
 			}
 		}
 	}
@@ -176,7 +177,7 @@ public class Network {
 			// Ping using given timeout (ms)
 			
 			long startTime = System.nanoTime();
-			if (inet.isReachable(50)) {
+			if (inet.isReachable(150)) {
 				long stopTime = System.nanoTime();
 				double durationNS = stopTime - startTime;
 				double durationMS = durationNS/1000000.0;
@@ -255,11 +256,12 @@ public class Network {
 				if(host.scanPort(port)) {
 					// adds to active port list if active
 					host.activePorts.add(port);
+					return;
 				} else {
-					
+					return;
 				}
 			} catch (Exception e) {
-				e.printStackTrace(System.out);
+				return;
 			}
 		}
 	}

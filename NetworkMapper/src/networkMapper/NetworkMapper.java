@@ -64,6 +64,7 @@ public class NetworkMapper {
 			}
 		}
 		
+		
 		// Close the scanner
 		sc.close();
 
